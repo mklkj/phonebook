@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+    <h1>Add entry</h1>
+
+    {{ form(form) }}
+
+    <a href="{{ path("app_phonebook_index")}}">Wróć do listy</a>
+
+{% endblock %}

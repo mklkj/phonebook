@@ -1,6 +1,33 @@
 {% extends 'base.html.twig' %}
 {% block body %}
 
-<h1>Your lucky number is {{ number }}</h1>
+    <h1>Książka telefoniczna</h1>
+
+    <a href="{{ path("app_admin_add") }}">Dodaj numer</a>
+
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Imię</th>
+                <th>Nazwisko</th>
+                <th>Nazwa</th>
+                <th>Numer 1</th>
+                <th>Numer 2</th>
+                <th>Informacje dodatkowe</th>
+            </tr>
+        </thead>
+        {% for entry in items %}
+            <tr>
+                <th>{{ entry.id }}</th>
+                <td>{{ entry.firstName ?? '-' }}</td>
+                <td>{{ entry.lastName ?? '-' }}</td>
+                <td>{{ entry.name ?? '-' }}</td>
+                <td>{{ entry.number1 ?? '-' }}</td>
+                <td>{{ entry.number2 ?? '-' }}</td>
+                <td>{{ entry.additional ?? '-' }}</td>
+            </tr>
+        {% endfor %}
+    </table>
 
 {% endblock %}
